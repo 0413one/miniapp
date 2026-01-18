@@ -1,1 +1,10 @@
-发生了一些错误
+<script>
+  // 只在路径不匹配任何HTML文件时才触发（避免干扰正常重写）
+  const validPaths = ['/cheese', '/nyaweb', '/qy', '/'];
+  const currentPath = window.location.pathname;
+  
+  if (!validPaths.includes(currentPath)) {
+    // 真正的404页面，跳转到首页
+    window.location.href = '/';
+  }
+</script>
